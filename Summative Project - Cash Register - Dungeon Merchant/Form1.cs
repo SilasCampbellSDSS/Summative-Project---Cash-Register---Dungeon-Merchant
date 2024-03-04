@@ -98,6 +98,46 @@ namespace Summative_Project___Cash_Register___Dungeon_Merchant
                 change = tendered - totalCost;
 
                 changeText.Text = $"{change.ToString("C")}";
+                
+                if (tendered < (totalCost))
+                {
+                    threatLabel.Text = "Hey! What are you trying to pull?!?";
+
+                    subtotalLabel.Visible = false;
+                    subtotalOutput.Visible = false;
+                    taxLabel.Visible = false;
+                    taxOutput.Visible = false;
+                    totalLabel.Visible = false;
+                    totalOutput.Visible = false;
+                    tenderedLabel.Visible = false;
+                    tenderedText.Visible = false;
+                    changeButton.Visible = false;
+                    changeText.Visible = false;
+                    receiptButton.Visible = false;
+
+                    receiptLabel.Text = "";
+                    weaponText.Text = "";
+                    armourText.Text = "";
+                    potionText.Text = "";
+                    tenderedText.Text = "";
+                    changeText.Text = "";
+
+                    weaponAmount = 0;
+                    armourAmount = 0;
+                    potionAmount = 0;
+                    subtotal = 0;
+                    taxAmount = 0;
+                    totalCost = 0;
+                    tendered = 0;
+                    change = 0;
+
+                    Refresh();
+                    Thread.Sleep(3000);
+
+                    threatLabel.Text = "";
+                }
+
+                this.Close();
             }
             catch 
             {
